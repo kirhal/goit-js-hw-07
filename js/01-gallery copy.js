@@ -35,37 +35,37 @@ function onGalleryBoxClick(e) {
       instance.close();
     }
   };
-
   const instance = basicLightbox
     .create(
       `<img src="${e.target.dataset.source}" width="1280" height="855">`,
       {
         onShow: (instance) => {
-          window.addEventListener("keydown", onEcsClick);
+          window.addEventListener("keydown", (e) => {
+            if (e.code === "Escape") {
+              instance.close();
+            }
+          });
         },
         onClose: (instance) => {
-          window.removeEventListener("keydown", onEcsClick);
+          window.removeEventListener("keydown", (e) => {
+            if (e.code === "Escape") {
+              instance.close();
+            }
+          });
         },
       }
     )
     .show();
+
   //   const instance = basicLightbox
   //     .create(
   //       `<img src="${e.target.dataset.source}" width="1280" height="855">`,
   //       {
   //         onShow: (instance) => {
-  //           window.addEventListener("keydown", (e) => {
-  //             if (e.code === "Escape") {
-  //               instance.close();
-  //             }
-  //           });
+  //           window.addEventListener("keydown", onEcsClick);
   //         },
   //         onClose: (instance) => {
-  //           window.removeEventListener("keydown", (e) => {
-  //             if (e.code === "Escape") {
-  //               instance.close();
-  //             }
-  //           });
+  //           window.removeEventListener("keydown", onEcsClick);
   //         },
   //       }
   //     )
