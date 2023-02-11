@@ -30,11 +30,6 @@ function onGalleryBoxClick(e) {
     return;
   }
 
-  const onEcsClick = (e) => {
-    if (e.code === "Escape") {
-      instance.close();
-    }
-  };
   const instance = basicLightbox
     .create(
       `<img src="${e.target.dataset.source}" width="1280" height="855">`,
@@ -56,6 +51,12 @@ function onGalleryBoxClick(e) {
       }
     )
     .show();
+
+  // const onEcsClick = (e) => {
+  //   if (e.code === "Escape") {
+  //     instance.close();
+  //   }
+  // };
 
   //   const instance = basicLightbox
   //     .create(
