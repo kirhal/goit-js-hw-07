@@ -49,6 +49,7 @@ function onGalleryBoxClick(e) {
       }
     )
     .show();
+
   //   const instance = basicLightbox
   //     .create(
   //       `<img src="${e.target.dataset.source}" width="1280" height="855">`,
