@@ -21,3 +21,13 @@ function createListItemsMarkup(obj) {
 galleryBoxEl.innerHTML = createListItemsMarkup(galleryItems);
 
 galleryBoxEl.addEventListener("click", onGalleryBoxClick);
+
+function onGalleryBoxClick(e) {
+  e.preventDefault();
+  if (e.target.nodeName !== "IMG") {
+    return;
+  }
+  var lightbox = new SimpleLightbox(".gallery a", {
+    /* options */
+  });
+}
