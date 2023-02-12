@@ -36,39 +36,16 @@ function onGalleryBoxClick(e) {
     }
   };
 
-  const instance = basicLightbox
-    .create(
-      `<img src="${e.target.dataset.source}" width="1280" height="855">`,
-      {
-        onShow: (instance) => {
-          window.addEventListener("keydown", onEcsClick);
-        },
-        onClose: (instance) => {
-          window.removeEventListener("keydown", onEcsClick);
-        },
-      }
-    )
-    .show();
-
-  //   const instance = basicLightbox
-  //     .create(
-  //       `<img src="${e.target.dataset.source}" width="1280" height="855">`,
-  //       {
-  //         onShow: (instance) => {
-  //           window.addEventListener("keydown", (e) => {
-  //             if (e.code === "Escape") {
-  //               instance.close();
-  //             }
-  //           });
-  //         },
-  //         onClose: (instance) => {
-  //           window.removeEventListener("keydown", (e) => {
-  //             if (e.code === "Escape") {
-  //               instance.close();
-  //             }
-  //           });
-  //         },
-  //       }
-  //     )
-  //     .show();
+  const instance = basicLightbox.create(
+    `<img src="${e.target.dataset.source}" width="1280" height="855">`,
+    {
+      onShow: (instance) => {
+        window.addEventListener("keydown", onEcsClick);
+      },
+      onClose: (instance) => {
+        window.removeEventListener("keydown", onEcsClick);
+      },
+    }
+  );
+  instance.show();
 }
